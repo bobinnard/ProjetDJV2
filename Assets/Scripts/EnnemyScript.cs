@@ -11,6 +11,7 @@ public class EnnemyScript : MonoBehaviour
     public float speed;
     public int score;
     public int reward;
+    public int hp;
 
     void Start()
     {
@@ -32,8 +33,19 @@ public class EnnemyScript : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int damage){
+        hp -= damage;
+        if(hp <= 0) Die();
+    }
+
     private void DealDamage(){
         GameManager.Instance.RemoveScore(score);
+        Destroy(gameObject);
+    }
+
+    private void Die(){
+        GameManager.Instance.AddScore(score);
+        GameManager.Instance.money += reward;
         Destroy(gameObject);
     }
 }

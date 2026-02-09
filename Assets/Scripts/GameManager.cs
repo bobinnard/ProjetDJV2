@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance => instance;
 
     private int ennemyMultiplier = 7;
+    private int maxMult = 5;
     
     private void Awake()
     {
@@ -70,13 +71,32 @@ public class GameManager : MonoBehaviour
     }
 
     public void RemoveScore(int removedScore){
-        ennemyMultiplier -= 1;
-        if(multiplier > 0) multiplier = -1;
-        else if(ennemyMultiplier <= 0)
-        {
-            multiplier -= 1;
-            ennemyMultiplier = 7;
+        if(multiplier > 0){
+            multiplier = -1;
+            ennemyMultiplier = -1;
+        }
+        else{
+            ennemyMultiplier -= 1;
+            if(ennemyMultiplier == -7 && multiplier < -1*maxMult){
+                multiplier -= 1;
+                ennemyMultiplier = 0;
+            }
         }
         score += removedScore*multiplier;
+    }
+
+    public void AddScore(int addedScore){
+        if(multiplier < 0){
+            multiplier = 1;
+            ennemyMultiplier = 1;
+        }
+        else{
+            ennemyMultiplier += 1;
+            if(ennemyMultiplier == 7 && multiplier < maxMult){
+                multiplier += 1;
+                ennemyMultiplier = 0;
+            }
+        }
+        score += addedScore*multiplier;
     }
 }
