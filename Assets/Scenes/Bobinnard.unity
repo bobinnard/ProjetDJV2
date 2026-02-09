@@ -154,6 +154,9 @@ MonoBehaviour:
   rounds:
   - {fileID: 11400000, guid: 4d48d2f8d66f48a41b51606c9bdfc108, type: 2}
   spawnPoint: {x: 0, y: 0, z: 0}
+  path:
+  - {x: 10, y: 0, z: 0}
+  - {x: 10, y: 0, z: 5}
 --- !u!4 &481064797
 Transform:
   m_ObjectHideFlags: 0

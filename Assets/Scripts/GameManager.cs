@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static int money;
-    public static int score;
-    private int multiplier;
+    public int money;
+    public int score;
+    public int multiplier;
     private int roundNumber;
 
     private int aliveEnnemies;
     [SerializeField] private RoundScript[] rounds;
     [SerializeField] private Vector3 spawnPoint;
+    private bool canSpawn = true;
+
+    [SerializeField] private Vector3[] path;
     
+    private static GameManager instance = null;
+    public static GameManager Instance => instance;
+
+    private int ennemyMultiplier = 7;
+    
+    private void Awake()
+    {
+        if (instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            instance = this;
+        }
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     void Start()
     {
         money = 0;
@@ -33,16 +55,28 @@ public class GameManager : MonoBehaviour
         GameObject[] ennemies = rounds[roundNumber].ennemieTypes;
         int nbEnnemy = rounds[roundNumber].nbEnnemy;
         float[] ennemyCooldown = rounds[roundNumber].ennemyCooldown;
-        for(int i = 0; i<nbEnnemy; i++){
-            StartCoroutine(spawnEnnemy(ennemies[(int)ennemyCooldown[2*i]], ennemyCooldown[2*i+1]));
-        }
+        StartCoroutine(spawnEnnemy(ennemies, ennemyCooldown, nbEnnemy, 0));
         roundNumber++;
     }
 
-    private IEnumerator spawnEnnemy(GameObject ennemy, float cooldown)
+    private IEnumerator spawnEnnemy(GameObject[] ennemieTypes, float[] ennemyCooldowns, int remainingEnnemies, int curEnnemy)
     {
-        GameObject instantiatedEnnemy = Instantiate(ennemy, spawnPoint, Quaternion.identity);
+        EnnemyScript myEnnemy;
+        GameObject instantiatedEnnemy = Instantiate(ennemieTypes[(int)ennemyCooldowns[2*curEnnemy]], spawnPoint, Quaternion.identity);
+        if(instantiatedEnnemy.TryGetComponent<EnnemyScript>(out myEnnemy)) myEnnemy.path = path;
         aliveEnnemies++;
-        yield return new WaitForSeconds(cooldown);
+        yield return new WaitForSeconds(ennemyCooldowns[2*curEnnemy+1]);
+        if(remainingEnnemies > 1) StartCoroutine(spawnEnnemy(ennemieTypes, ennemyCooldowns, remainingEnnemies-1, curEnnemy+1));
+    }
+
+    public void RemoveScore(int removedScore){
+        ennemyMultiplier -= 1;
+        if(multiplier > 0) multiplier = -1;
+        else if(ennemyMultiplier <= 0)
+        {
+            multiplier -= 1;
+            ennemyMultiplier = 7;
+        }
+        score += removedScore*multiplier;
     }
 }

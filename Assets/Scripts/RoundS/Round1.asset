@@ -12,13 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b72627f2bfd1caa47a4a5c6256950424, type: 3}
   m_Name: Round1
   m_EditorClassIdentifier: 
-  nbEnnemy: 3
+  nbEnnemy: 10
   ennemieTypes:
-  - {fileID: 0}
+  - {fileID: 3266672300219935966, guid: e8d238cf06d52aa4ea22440a7ef5d867, type: 3}
   ennemyCooldown:
   - 0
-  - 1
+  - 0.5
   - 0
-  - 1
+  - 0.5
   - 0
-  - 1
+  - 0.5
+  - 0
+  - 0.5
+  - 0
+  - 0.5
+  - 0
+  - 0.5
+  - 0
+  - 0.5
+  - 0
+  - 0.5
+  - 0
+  - 0.5
+  - 0
+  - 0.5
