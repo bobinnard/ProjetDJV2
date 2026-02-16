@@ -40,12 +40,14 @@ public class EnnemyScript : MonoBehaviour
 
     private void DealDamage(){
         GameManager.Instance.RemoveScore(score);
+        GameManager.Instance.aliveEnnemies --;
         Destroy(gameObject);
     }
 
     private void Die(){
         GameManager.Instance.AddScore(score);
         GameManager.Instance.money += reward;
+        GameManager.Instance.aliveEnnemies --;
         Destroy(gameObject);
     }
 }

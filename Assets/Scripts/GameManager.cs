@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     private int maxMult = 5;
 
     [SerializeField] private TMP_Text scoreText;
-    
+
     private void Awake()
     {
         EndingPoint = path[path.Length-1];
@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(aliveEnnemies <= 0) LaunchNextRound();
+        if(aliveEnnemies <= 0 && roundNumber < rounds.Length) LaunchNextRound();
         scoreText.text = "Score: " + score + "\nMultiplier: " + multiplier + "\nMoney: " + money;
     }
 

@@ -47,11 +47,12 @@ MonoBehaviour:
   money: 0
   score: 0
   multiplier: 0
+  aliveEnnemies: 0
   rounds:
   - {fileID: 11400000, guid: 4d48d2f8d66f48a41b51606c9bdfc108, type: 2}
   spawnPoint: {x: 0, y: 0, z: 0}
   path:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
+  - {x: 10, y: 0, z: 0}
+  - {x: 10, y: 0, z: 5}
   EndingPoint: {x: 0, y: 0, z: 0}
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 6215469031867212044, guid: 09a8ab5273474fd42ad193159a364d21, type: 3}

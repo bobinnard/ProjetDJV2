@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Liien : TurretBaseScript
 {
-    [SerializeField] private GameObject bullet;
     private bool canAttack = true;
     // Start is called before the first frame update
     void Start()
@@ -31,9 +30,8 @@ public class Liien : TurretBaseScript
             }
         }
         transform.LookAt(nearEnnemies[minI].gameObject.transform.position);
-        GameObject instantiatedBullet = Instantiate(bullet, transform.position + transform.forward, transform.rotation);
-        BulletScript bulletDamage;
-        if(instantiatedBullet.TryGetComponent<BulletScript>(out bulletDamage)) bulletDamage.damage = damage;
+        EnnemyScript ennemyHp;
+        if(nearEnnemies[minI].gameObject.TryGetComponent<EnnemyScript>(out ennemyHp)) ennemyHp.TakeDamage(damage);
         yield return new WaitForSeconds(attackSpeed);
         canAttack = true;
     }

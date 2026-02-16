@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Liien
   m_EditorClassIdentifier: 
   range: 100
-  damage: 5
-  attackSpeed: 1.5
+  damage: 1000000
+  attackSpeed: 1
   Cost: 10
   UpgradeCost: 140000003200000064000000
