@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public int aliveEnnemies;
     [SerializeField] private RoundScript[] rounds;
     [SerializeField] private Vector3 spawnPoint;
+    private bool canLaunch = true;
 
     [SerializeField] private Vector3[] path;
     public Vector3 EndingPoint;
@@ -52,12 +53,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(aliveEnnemies <= 0 && roundNumber < rounds.Length) LaunchNextRound();
+        if(aliveEnnemies <= 0 && roundNumber < rounds.Length && canLaunch) LaunchNextRound();
         scoreText.text = "Score: " + score + "\nMultiplier: " + multiplier + "\nMoney: " + money;
     }
 
     private void LaunchNextRound()
     {
+        canLaunch = false;
         GameObject[] ennemies = rounds[roundNumber].ennemieTypes;
         int nbEnnemy = rounds[roundNumber].nbEnnemy;
         float[] ennemyCooldown = rounds[roundNumber].ennemyCooldown;
@@ -73,6 +75,7 @@ public class GameManager : MonoBehaviour
         aliveEnnemies++;
         yield return new WaitForSeconds(ennemyCooldowns[2*curEnnemy+1]);
         if(remainingEnnemies > 1) StartCoroutine(spawnEnnemy(ennemieTypes, ennemyCooldowns, remainingEnnemies-1, curEnnemy+1));
+        else canLaunch = true;
     }
 
     public void RemoveScore(int removedScore){

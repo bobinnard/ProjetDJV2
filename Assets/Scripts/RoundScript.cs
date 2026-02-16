@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "roundData", menuName = "TD/GenerateEnnemy", order = 1)]
+[CreateAssetMenu(fileName = "roundData", menuName = "TD/GenerateRound", order = 1)]
 public class RoundScript : ScriptableObject
 {
     public int nbEnnemy;
