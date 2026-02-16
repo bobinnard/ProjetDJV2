@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,18 +13,21 @@ public class GameManager : MonoBehaviour
     private int aliveEnnemies;
     [SerializeField] private RoundScript[] rounds;
     [SerializeField] private Vector3 spawnPoint;
-    private bool canSpawn = true;
 
     [SerializeField] private Vector3[] path;
+    public Vector3 EndingPoint;
     
     private static GameManager instance = null;
     public static GameManager Instance => instance;
 
     private int ennemyMultiplier = 7;
     private int maxMult = 5;
+
+    [SerializeField] private TMP_Text scoreText;
     
     private void Awake()
     {
+        EndingPoint = path[path.Length-1];
         if (instance != null && instance != this)
         {
             Destroy(this.gameObject);
@@ -49,6 +53,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if(aliveEnnemies <= 0) LaunchNextRound();
+        scoreText.text = "Score: " + score + "\nMultiplier: " + multiplier + "\nMoney: " + money;
     }
 
     private void LaunchNextRound()
@@ -77,7 +82,7 @@ public class GameManager : MonoBehaviour
         }
         else{
             ennemyMultiplier -= 1;
-            if(ennemyMultiplier == -7 && multiplier < -1*maxMult){
+            if(ennemyMultiplier == -7 && multiplier > -1*maxMult){
                 multiplier -= 1;
                 ennemyMultiplier = 0;
             }
