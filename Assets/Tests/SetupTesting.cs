@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using UnityEngine.SceneManagement;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using System.Threading.Tasks;
 
 public class SetupTesting
 {
@@ -18,8 +22,12 @@ public class SetupTesting
     [UnityTest]
     public IEnumerator GameManagerInstatiation()
     {
-        // Use the Assert class to test conditions.
-        // Use yield to skip a frame.
-        yield return null;
+        SceneManager.LoadScene("GameTest");
+        var request = Addressables.LoadAsset<GameObject>("Assets/Prefab/GameManager.prefab");
+        yield return request;
+        GameObject gameManager = GameObject.Instantiate(request.Result,Vector3.zero,Quaternion.identity);
+        Assert.That(gameManager, Is.Not.Null);
+        yield return new WaitForSeconds(10f);
+        Assert.That(GameManager.Instance.aliveEnnemies == 0);
     }
 }
