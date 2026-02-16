@@ -30,10 +30,11 @@ public class Liien : TurretBaseScript
                 minI = i;
             }
         }
-        //EnnemyScript chosenEnnemy;
-        //if(nearEnnemies[minI].TryGetComponent<EnnemyScript>(out chosenEnnemy)) chosenEnnemy.hp -= damage;
-        Destroy(nearEnnemies[minI].gameObject);
-        if(canAttack == false) yield return new WaitForSeconds(attackSpeed);
+        transform.LookAt(nearEnnemies[minI].gameObject.transform.position);
+        GameObject instantiatedBullet = Instantiate(bullet, transform.position + transform.forward, transform.rotation);
+        BulletScript bulletDamage;
+        if(instantiatedBullet.TryGetComponent<BulletScript>(out bulletDamage)) bulletDamage.damage = damage;
+        yield return new WaitForSeconds(attackSpeed);
         canAttack = true;
     }
 

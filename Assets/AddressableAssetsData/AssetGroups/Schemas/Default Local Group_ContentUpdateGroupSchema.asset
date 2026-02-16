@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cc4f3e5905aef341a8f4091405d94b1, type: 3}
-  m_Name: Liien
+  m_Script: {fileID: 11500000, guid: 5834b5087d578d24c926ce20cd31e6d6, type: 3}
+  m_Name: Default Local Group_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
-  range: 100
-  damage: 5
-  attackSpeed: 1.5
-  Cost: 10
-  UpgradeCost: 140000003200000064000000
+  m_Group: {fileID: 11400000, guid: a1315ef929a9a2f4f8538fc53c82cc3f, type: 2}
+  m_StaticContent: 0

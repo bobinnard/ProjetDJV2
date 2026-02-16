@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public int multiplier;
     private int roundNumber;
 
-    private int aliveEnnemies;
+    public int aliveEnnemies;
     [SerializeField] private RoundScript[] rounds;
     [SerializeField] private Vector3 spawnPoint;
 
