@@ -13,6 +13,8 @@ public class EnnemyScript : MonoBehaviour
     public int reward;
     public int hp;
 
+    private bool isDead = false;
+
     void Start()
     {
         currentTarget = 0;
@@ -35,7 +37,7 @@ public class EnnemyScript : MonoBehaviour
 
     public void TakeDamage(int damage){
         hp -= damage;
-        if(hp <= 0) Die();
+        if(hp <= 0 && !isDead) Die();
     }
 
     private void DealDamage(){
@@ -45,6 +47,7 @@ public class EnnemyScript : MonoBehaviour
     }
 
     private void Die(){
+        isDead = true;
         GameManager.Instance.AddScore(score);
         GameManager.Instance.money += reward;
         GameManager.Instance.aliveEnnemies --;

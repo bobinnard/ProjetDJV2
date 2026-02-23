@@ -5,26 +5,41 @@ using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    //values to show to the player, its money count, int current score, its score multiplier
     public int money;
     public int score;
     public int multiplier;
+    //The round the player is on
     private int roundNumber;
 
+    //Amount of ennemies currently alive in the current round
     public int aliveEnnemies;
+    //List of all rounds going to be played
     [SerializeField] private RoundScript[] rounds;
+    //The coordinates of where ennemies spawn
     [SerializeField] private Vector3 spawnPoint;
+    //A bool to make sure rounds launch one by one
     private bool canLaunch = true;
 
+    //List of points ennemies need to reach on the map
     [SerializeField] private Vector3[] path;
+    //Coordinates of the point ennemies reach last
     public Vector3 EndingPoint;
     
+    //Variables to make the GameManager singleton
     private static GameManager instance = null;
     public static GameManager Instance => instance;
 
+    //Variable to count how many ennemies are dead to modify the multiplier every 7 dead ennemies
     private int ennemyMultiplier = 7;
+    //The maximum the mult can reach
     private int maxMult = 5;
 
+    //Where we display the score
     [SerializeField] private TMP_Text scoreText;
+
+    //Bool describing if we are in build phase or battle phase
+    public bool isInBuildPhase = true;
 
     private void Awake()
     {
@@ -47,17 +62,22 @@ public class GameManager : MonoBehaviour
         score = 0;
         multiplier = 1;
         roundNumber = 0;
-        LaunchNextRound();
+        GoToBuildPhase();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(aliveEnnemies <= 0 && roundNumber < rounds.Length && canLaunch) LaunchNextRound();
+        if(aliveEnnemies <= 0 && roundNumber < rounds.Length && canLaunch && !isInBuildPhase) GoToBuildPhase();
         scoreText.text = "Score: " + score + "\nMultiplier: " + multiplier + "\nMoney: " + money;
     }
 
-    private void LaunchNextRound()
+    private void GoToBuildPhase()
+    {
+        isInBuildPhase = true;
+    }
+
+    public void LaunchNextRound()
     {
         canLaunch = false;
         GameObject[] ennemies = rounds[roundNumber].ennemieTypes;
