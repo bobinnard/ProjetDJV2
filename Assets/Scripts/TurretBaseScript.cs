@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TurretBaseScript : MonoBehaviour
 {
-    [SerializeField] private TurretInfo info;
+    [SerializeField] public TurretInfo info;
     protected float range;
     protected int damage;
     protected float attackSpeed;

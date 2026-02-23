@@ -1,18 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TowerPosition : MonoBehaviour
 {
     [SerializeField] private GameObject menu;
+    [SerializeField] private Button button;
 
-    private bool _isMenuActive = false;
+    private bool _isTowerMenuActive = false;
     private bool _isOccupied = false;
+
+    private void Start()
+    {
+        
+    }
     
     private void ToggleMenu()
     {
-        _isMenuActive = !_isMenuActive;
-        menu.SetActive(_isMenuActive);
+        if (!_isOccupied)
+        {
+        }
+        else _isTowerMenuActive = !_isTowerMenuActive;
+        menu.SetActive(_isTowerMenuActive);
+        return;
+        
     }
 
     public void BuildTower()
