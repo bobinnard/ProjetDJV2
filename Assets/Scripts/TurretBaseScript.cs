@@ -10,7 +10,7 @@ public class TurretBaseScript : MonoBehaviour
     protected float attackSpeed;
     protected int Cost;
     protected int[] UpgradeCost;
-    protected int level = 3;
+    protected int level = 0;
 
     public virtual void Upgrade(){
         if(GameManager.Instance.money >= UpgradeCost[level] && level < UpgradeCost.Length){
