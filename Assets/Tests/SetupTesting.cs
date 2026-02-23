@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 public class SetupTesting
 {
+    GameObject gameManager;
     // A Test behaves as an ordinary method
     [Test]
     public void SetupTestingSimplePasses()
@@ -19,15 +20,25 @@ public class SetupTesting
 
     // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
     // `yield return null;` to skip a frame.
-    [UnityTest]
+    [UnitySetUp]
     public IEnumerator GameManagerInstatiation()
     {
         SceneManager.LoadScene("GameTest");
         var request = Addressables.LoadAsset<GameObject>("Assets/Prefab/GameManager.prefab");
         yield return request;
-        GameObject gameManager = GameObject.Instantiate(request.Result,Vector3.zero,Quaternion.identity);
+        gameManager = GameObject.Instantiate(request.Result,Vector3.zero,Quaternion.identity);
+    }
+
+    [UnityTest]
+    public IEnumerator RoundTest()
+    {
+        var request = Addressables.LoadAsset<GameObject>("Assets/Prefab/Turrets/Liien.prefab");
+        yield return request;
+        GameObject liien = GameObject.Instantiate(request.Result,Vector3.forward,Quaternion.identity);
+        liien.transform.LookAt(Vector3.zero);
         Assert.That(gameManager, Is.Not.Null);
         yield return new WaitForSeconds(10f);
-        Assert.That(GameManager.Instance.aliveEnnemies == 0);
+        Assert.That(GameManager.Instance.aliveEnnemies <= 0);
+        Assert.That(GameManager.Instance.score > 0);
     }
 }

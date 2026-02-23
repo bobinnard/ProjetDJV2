@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cc4f3e5905aef341a8f4091405d94b1, type: 3}
-  m_Name: Liien
+  m_Script: {fileID: 11500000, guid: b72627f2bfd1caa47a4a5c6256950424, type: 3}
+  m_Name: RoundBoss
   m_EditorClassIdentifier: 
-  range: 100
-  damage: 3
-  attackSpeed: 1
-  Cost: 10
-  UpgradeCost: 140000003200000064000000
+  nbEnnemy: 1
+  ennemieTypes:
+  - {fileID: 1057844785840860816, guid: 7090018c1576c1549a00847c50720d1a, type: 3}
+  ennemyCooldown:
+  - 0
+  - 0
