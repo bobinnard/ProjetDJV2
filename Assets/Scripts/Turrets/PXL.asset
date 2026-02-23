@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3cc4f3e5905aef341a8f4091405d94b1, type: 3}
-  m_Name: Liien
+  m_Name: PXL
   m_EditorClassIdentifier: 
-  range: 3
-  damage: 3
-  attackSpeed: 1
-  Cost: 10
-  UpgradeCost: 140000003200000064000000
+  range: 1
+  damage: 20
+  attackSpeed: 0.6
+  Cost: 20
+  UpgradeCost: 1e0000003c00000078000000
   upgradeDesc:
-  - +1 range, +2 damage, -0.1 attack speed
-  - +1 range, +2 damage, -0.1 attack speed
-  - +1 range, +2 damage, -0.1 attack speed, triple shot
+  - +5 dmg, -0.2 atck speed
+  - +10 dmg, -0.2 atck speed
+  - +10 dmg, sabers become giant!
