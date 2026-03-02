@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
     //Bool describing if we are in build phase or battle phase
     public bool isInBuildPhase = true;
 
+    //Int indicating how many third level Tiimeless are in effect
+    public int isSlown;
+
     private void Awake()
     {
         EndingPoint = path[path.Length-1];
@@ -91,7 +94,14 @@ public class GameManager : MonoBehaviour
     {
         EnnemyScript myEnnemy;
         GameObject instantiatedEnnemy = Instantiate(ennemieTypes[(int)ennemyCooldowns[2*curEnnemy]], spawnPoint, Quaternion.identity);
-        if(instantiatedEnnemy.TryGetComponent<EnnemyScript>(out myEnnemy)) myEnnemy.path = path;
+        if(instantiatedEnnemy.TryGetComponent<EnnemyScript>(out myEnnemy))
+        {
+            myEnnemy.path = path;
+            for (int i = 0; i<isSlown; i++)
+            {
+                myEnnemy.speed /= 2;
+            }
+        } 
         aliveEnnemies++;
         yield return new WaitForSeconds(ennemyCooldowns[2*curEnnemy+1]);
         if(remainingEnnemies > 1) StartCoroutine(spawnEnnemy(ennemieTypes, ennemyCooldowns, remainingEnnemies-1, curEnnemy+1));

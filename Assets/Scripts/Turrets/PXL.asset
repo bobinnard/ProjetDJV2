@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: PXL
   m_EditorClassIdentifier: 
   range: 1
-  damage: 20
-  attackSpeed: 0.6
+  damage: 5
+  attackSpeed: 1
   Cost: 20
   UpgradeCost: 1e0000003c00000078000000
   upgradeDesc:
   - +5 dmg, -0.2 atck speed
   - +10 dmg, -0.2 atck speed
-  - +10 dmg, sabers become giant!
+  - sabers become giant! Sabers stun

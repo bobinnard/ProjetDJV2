@@ -20,7 +20,7 @@ public class Diese : TurretBaseScript
     private IEnumerator Offers()
     {
         canOffer = false;
-        Instantiate(offerIcon, transform.position, transform.rotation);
+        offerIcon.SetActive(true);
         yield return new WaitForSeconds(offersCooldown);
         canOffer = true;
     }
