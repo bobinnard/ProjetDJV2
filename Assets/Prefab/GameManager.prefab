@@ -50,9 +50,14 @@ MonoBehaviour:
   aliveEnnemies: 0
   rounds:
   - {fileID: 11400000, guid: 4d48d2f8d66f48a41b51606c9bdfc108, type: 2}
+  - {fileID: 11400000, guid: ccb9b3d052f097f4cb2a90f7963f30b1, type: 2}
+  - {fileID: 11400000, guid: 07c63c65eb1be0145b82529c12fb16c1, type: 2}
+  - {fileID: 11400000, guid: 9bd9317c1433339438e7fb3a2a18c5af, type: 2}
   spawnPoint: {x: 0, y: 0, z: 0}
   path:
   - {x: 10, y: 0, z: 0}
   - {x: 10, y: 0, z: 5}
   EndingPoint: {x: 0, y: 0, z: 0}
   scoreText: {fileID: 6215469031867212044, guid: 09a8ab5273474fd42ad193159a364d21, type: 3}
+  isInBuildPhase: 1
+  isSlown: 0
