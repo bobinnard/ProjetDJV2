@@ -27,10 +27,4 @@ public class TurretBaseScript : MonoBehaviour
         Cost = info.Cost;
         UpgradeCost = info.UpgradeCost;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

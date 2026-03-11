@@ -10,4 +10,5 @@ public class TurretInfo : ScriptableObject
     public float attackSpeed;
     public int Cost;
     public int[] UpgradeCost;
+    public string[] upgradeDesc;
 }

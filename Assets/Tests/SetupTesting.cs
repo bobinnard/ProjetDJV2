@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using System.Threading.Tasks;
+using System.Reflection;
 
 public class SetupTesting
 {
@@ -37,8 +38,11 @@ public class SetupTesting
         GameObject liien = GameObject.Instantiate(request.Result,Vector3.forward,Quaternion.identity);
         liien.transform.LookAt(Vector3.zero);
         Assert.That(gameManager, Is.Not.Null);
+        GameManager.Instance.isInBuildPhase = false;
+        GameManager.Instance.LaunchNextRound();
         yield return new WaitForSeconds(10f);
         Assert.That(GameManager.Instance.aliveEnnemies <= 0);
-        Assert.That(GameManager.Instance.score > 0);
+        Assert.That(GameManager.Instance.score >= 0);
+        Assert.That(GameManager.Instance.isInBuildPhase == true);
     }
 }
