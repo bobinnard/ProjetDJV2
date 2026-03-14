@@ -1,48 +1,45 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Liien : TurretBaseScript
 {
-    private bool canAttack = true;
+    private bool _canAttack = true;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        Collider[] nearEnnemies = Physics.OverlapSphere(transform.position, range, 8);
-        if(canAttack && nearEnnemies.Length > 0) StartCoroutine(Attack(nearEnnemies));
+        Collider[] nearEnemies = Physics.OverlapSphere(transform.position, range, 8);
+        if(_canAttack && nearEnemies.Length > 0) StartCoroutine(Attack(nearEnemies));
     }
 
-    private IEnumerator Attack(Collider[] nearEnnemies){
-        canAttack = false;
+    private IEnumerator Attack(Collider[] nearEnemies){
+        _canAttack = false;
         float minDist = 9999999;
         int minI = 0;
-        for (int i = 0; i<nearEnnemies.Length; i++){
-            float curDist = Vector3.Distance(nearEnnemies[i].gameObject.transform.position, GameManager.Instance.EndingPoint);
+        for (int i = 0; i<nearEnemies.Length; i++){
+            float curDist = Vector3.Distance(nearEnemies[i].gameObject.transform.position, GameManager.Instance.EndingPoint);
             if(curDist < minDist){
                 minDist = curDist;
                 minI = i;
             }
         }
-        transform.LookAt(nearEnnemies[minI].gameObject.transform.position);
-        EnnemyScript ennemyHp;
-        if(nearEnnemies[minI].gameObject.TryGetComponent<EnnemyScript>(out ennemyHp)) ennemyHp.TakeDamage(damage);
-        if (level == 3) MultiHit(nearEnnemies[minI]);
+        transform.LookAt(nearEnemies[minI].gameObject.transform.position);
+        if(nearEnemies[minI].gameObject.TryGetComponent<EnnemyScript>(out var enemyHp)) enemyHp.TakeDamage(damage);
+        if (level == 3) MultiHit(nearEnemies[minI]);
         yield return new WaitForSeconds(attackSpeed);
-        canAttack = true;
+        _canAttack = true;
     }
 
-    //if level 3, liien gets triple shot
-    private void MultiHit(Collider centralEnnemy)
+    // if level 3, liien gets triple shot
+    private void MultiHit(Collider centralEnemy)
     {
-        Collider[] collateralEnnemies = Physics.OverlapSphere(centralEnnemy.gameObject.transform.position, 3, 8);
-        if(collateralEnnemies.Length == 0) return;
+        Collider[] collateralEnemies = Physics.OverlapSphere(centralEnemy.gameObject.transform.position, range, 8);
+        if(collateralEnemies.Length == 0) return;
         float minDist1 = 9999999;
         int minI1 = 0;
         float minDist2 = 9999999;
         int minI2 = 0;
-        for (int i = 0; i<collateralEnnemies.Length; i++){
-            float curDist = Vector3.Distance(collateralEnnemies[i].gameObject.transform.position, GameManager.Instance.EndingPoint);
+        for (int i = 0; i<collateralEnemies.Length; i++){
+            float curDist = Vector3.Distance(collateralEnemies[i].gameObject.transform.position, GameManager.Instance.EndingPoint);
             if(curDist < minDist1){
                 minDist2 = minDist1;
                 minI2 = minI1;
@@ -54,16 +51,15 @@ public class Liien : TurretBaseScript
                 minI2 = i;
             }
         }
-        if(collateralEnnemies.Length == 1)
+        if(collateralEnemies.Length == 1)
         {
-            EnnemyScript ennemyHP;
-            if(collateralEnnemies[minI1].gameObject.TryGetComponent<EnnemyScript>(out ennemyHP)) ennemyHP.TakeDamage(damage);
+            if(collateralEnemies[minI1].gameObject.TryGetComponent<EnnemyScript>(out var enemyHp)) enemyHp.TakeDamage(damage);
         }
         else 
         {
-            EnnemyScript ennemyHP;
-            if(collateralEnnemies[minI1].gameObject.TryGetComponent<EnnemyScript>(out ennemyHP)) ennemyHP.TakeDamage(damage);
-            if(collateralEnnemies[minI2].gameObject.TryGetComponent<EnnemyScript>(out ennemyHP)) ennemyHP.TakeDamage(damage);
+            EnnemyScript enemyHp;
+            if(collateralEnemies[minI1].gameObject.TryGetComponent<EnnemyScript>(out enemyHp)) enemyHp.TakeDamage(damage);
+            if(collateralEnemies[minI2].gameObject.TryGetComponent<EnnemyScript>(out enemyHp)) enemyHp.TakeDamage(damage);
         }
     }
 

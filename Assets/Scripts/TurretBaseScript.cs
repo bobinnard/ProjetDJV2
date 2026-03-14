@@ -13,7 +13,7 @@ public class TurretBaseScript : MonoBehaviour
     protected int[] UpgradeCost;
     protected int level = 0;
 
-    // returns bool indicating if upgrade was successfull
+    // returns bool indicating if upgrade was successful
     public virtual bool Upgrade(){
         // We check whether the player has enough money to upgrade
         if (level < UpgradeCost.Length && GameManager.Instance.money >= UpgradeCost[level]){
@@ -27,7 +27,7 @@ public class TurretBaseScript : MonoBehaviour
         
         return false;
     }
-    // Start is called before the first frame update
+    
     void Awake()
     {
         range = info.range;

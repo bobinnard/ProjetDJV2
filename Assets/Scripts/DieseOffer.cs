@@ -1,10 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DieseOffer : MonoBehaviour
 {
-    void Start()
+    private void Start()
     {
         StartCoroutine(DestroySelf());
     }

@@ -6,11 +6,10 @@ public class Diese : TurretBaseScript
 {
     private bool _isOnCooldown = false;
 
-    private float _offersCooldown = 5;
+    private float  _offersCooldown = 5;
     private bool _canOffer = true;
     [SerializeField] private GameObject offerIcon;
 
-    // Update is called once per frame
     void Update()
     {
         if(!_isOnCooldown && !GameManager.Instance.isInBuildPhase) StartCoroutine(ProduceMoney());
