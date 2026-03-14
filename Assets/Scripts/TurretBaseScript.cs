@@ -21,7 +21,7 @@ public class TurretBaseScript : MonoBehaviour
             // We upgrade, the heritage manages the stat changes
             level++;
             // We raise the mesh to visually show the upgrade
-            mesh.transform.position += new Vector3(0f, 0.33f, 0f);
+            mesh.transform.position += new Vector3(0f, 0.25f, 0f);
             return true;
         }
         

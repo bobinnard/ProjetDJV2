@@ -16,7 +16,7 @@ public class TowerPosition : MonoBehaviour
     // whether the main button is selected, used to ask confirmation on tower placement
     private bool _isSelected;
     // placement whose upgrade/delete UI is shown, used to make sure only one UI is shown at once.
-    private TowerPosition _selectedButton;
+    private static TowerPosition _selectedButton;
 
     private void Update()
     {
