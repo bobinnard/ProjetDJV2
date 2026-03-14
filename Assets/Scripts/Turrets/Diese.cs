@@ -4,36 +4,37 @@ using UnityEngine;
 
 public class Diese : TurretBaseScript
 {
-    private bool isOnCooldown = false;
+    private bool _isOnCooldown = false;
 
-    private float offersCooldown = 5;
-    private bool canOffer = true;
+    private float _offersCooldown = 5;
+    private bool _canOffer = true;
     [SerializeField] private GameObject offerIcon;
 
     // Update is called once per frame
     void Update()
     {
-        if(!isOnCooldown && !GameManager.Instance.isInBuildPhase) StartCoroutine(ProduceMoney());
-        if(canOffer && !GameManager.Instance.isInBuildPhase) StartCoroutine(Offers());
+        if(!_isOnCooldown && !GameManager.Instance.isInBuildPhase) StartCoroutine(ProduceMoney());
+        if(_canOffer && !GameManager.Instance.isInBuildPhase) StartCoroutine(Offers());
     }
 
     private IEnumerator Offers()
     {
-        canOffer = false;
+        _canOffer = false;
         offerIcon.SetActive(true);
-        yield return new WaitForSeconds(offersCooldown);
-        canOffer = true;
+        yield return new WaitForSeconds(_offersCooldown);
+        _canOffer = true;
     }
 
     private IEnumerator ProduceMoney()
     {
-        isOnCooldown = true;
+        _isOnCooldown = true;
         GameManager.Instance.money += damage;
         yield return new WaitForSeconds(attackSpeed);
-        isOnCooldown = false;
+        _isOnCooldown = false;
     }
 
-    public override void Upgrade(){
+    public override bool Upgrade(){
+        if (!base.Upgrade()) return false;
         if(level == 1)
         {
             damage += 5;
@@ -45,5 +46,6 @@ public class Diese : TurretBaseScript
             attackSpeed -= 1f;
         }
         else damage += 100;
+        return true;
     }
 }

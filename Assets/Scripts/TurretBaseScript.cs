@@ -5,6 +5,7 @@ using UnityEngine;
 public class TurretBaseScript : MonoBehaviour
 {
     [SerializeField] public TurretInfo info;
+    [SerializeField] private GameObject mesh;
     protected float range;
     protected int damage;
     protected float attackSpeed;
@@ -12,11 +13,19 @@ public class TurretBaseScript : MonoBehaviour
     protected int[] UpgradeCost;
     protected int level = 0;
 
-    public virtual void Upgrade(){
-        if(GameManager.Instance.money >= UpgradeCost[level] && level < UpgradeCost.Length){
+    // returns bool indicating if upgrade was successfull
+    public virtual bool Upgrade(){
+        // We check whether the player has enough money to upgrade
+        if (level < UpgradeCost.Length && GameManager.Instance.money >= UpgradeCost[level]){
             GameManager.Instance.money -= UpgradeCost[level];
+            // We upgrade, the heritage manages the stat changes
             level++;
+            // We raise the mesh to visually show the upgrade
+            mesh.transform.position += new Vector3(0f, 0.33f, 0f);
+            return true;
         }
+        
+        return false;
     }
     // Start is called before the first frame update
     void Awake()

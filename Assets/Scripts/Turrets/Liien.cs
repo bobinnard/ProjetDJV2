@@ -67,9 +67,11 @@ public class Liien : TurretBaseScript
         }
     }
 
-    public override void Upgrade(){
+    public override bool Upgrade(){
+        if (!base.Upgrade()) return false;
         range += 1;
         damage += 2;
         attackSpeed -= 0.1f;
+        return true;
     }
 }

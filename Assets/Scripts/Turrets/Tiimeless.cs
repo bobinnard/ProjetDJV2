@@ -28,7 +28,8 @@ public class Tiimeless : TurretBaseScript
         yield return new WaitForSeconds(attackSpeed);
         canAttack = true;
     }
-    public override void Upgrade(){
+    public override bool Upgrade(){
+        if (!base.Upgrade()) return false;
         if(level < 3)
         {
             damage += 2;
@@ -44,6 +45,8 @@ public class Tiimeless : TurretBaseScript
                 EnnemyScript ennemyhp;
                 if(ennemies[i].TryGetComponent<EnnemyScript>(out ennemyhp)) ennemyhp.speed /= 2;
             }  
-        } 
+        }
+
+        return true;
     }
 }
