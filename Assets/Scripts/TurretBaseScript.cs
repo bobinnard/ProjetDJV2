@@ -35,11 +35,12 @@ public class TurretBaseScript : MonoBehaviour
         if(stat == "range") range = (int)set;
     }
 
-    float getStats(string stat)
+    public float getStats(string stat)
     {
         if(stat == "attackSpeed") return attackSpeed;
         if(stat == "damage") return damage;
         if(stat == "range") return range;
+        else return -1;
     }
 
     //--------------------------Testing functions---------------------------
