@@ -6,8 +6,8 @@ public class Diese : TurretBaseScript
 {
     private bool _isOnCooldown = false;
 
-    private float offersCooldown = 5;
-    private bool canOffer = false;
+    private float _offersCooldown = 5;
+    private bool _canOffer = false;
     [SerializeField] private GameObject offerIcon;
 
     void Update()
@@ -47,7 +47,7 @@ public class Diese : TurretBaseScript
         else
         {
             damage += 100;
-            canOffer = true;
+            _canOffer = true;
         } 
         return true;
     }

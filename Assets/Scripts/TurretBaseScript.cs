@@ -92,6 +92,6 @@ public class TurretBaseScript : MonoBehaviour
 
     public bool VerifyValues(int r, int d, float aspeed)
     {
-        return(r == range && d == damage && aspeed == attackSpeed);
+        return r == range && d == damage && aspeed == attackSpeed;
     }
 }

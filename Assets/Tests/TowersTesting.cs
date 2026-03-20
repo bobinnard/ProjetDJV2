@@ -31,6 +31,7 @@ public class TowersTesting
         GameObject liien = GameObject.Instantiate(request.Result,Vector3.forward,Quaternion.identity);
         liien.transform.LookAt(Vector3.zero);
         Liien liienCode;
+        GameManager.Instance.money += 1000;
         if(liien.TryGetComponent<Liien>(out liienCode))
         {
             Assert.That(liienCode.VerifyValues(3,3,1));
@@ -59,20 +60,21 @@ public class TowersTesting
     [UnityTest]
     public IEnumerator PXLTest()
     {
-        var request = Addressables.LoadAsset<GameObject>("Assets/Prefab/Turrets/Liien.prefab");
+        var request = Addressables.LoadAsset<GameObject>("Assets/Prefab/Turrets/PXL.prefab");
         yield return request;
-        GameObject liien = GameObject.Instantiate(request.Result,Vector3.forward,Quaternion.identity);
-        liien.transform.LookAt(Vector3.zero);
-        Liien liienCode;
-        if(liien.TryGetComponent<Liien>(out liienCode))
+        GameObject pxl = GameObject.Instantiate(request.Result,Vector3.forward,Quaternion.identity);
+        pxl.transform.LookAt(Vector3.zero);
+        PXL pixelCode;
+        GameManager.Instance.money += 1000;
+        if(pxl.TryGetComponent<PXL>(out pixelCode))
         {
-            Assert.That(liienCode.VerifyValues(1,5,1));
-            liienCode.Upgrade();
-            Assert.That(liienCode.VerifyValues(1,10,0.8f));
-            liienCode.Upgrade();
-            Assert.That(liienCode.VerifyValues(1,20,0.6f));
-            liienCode.Upgrade();
-            Assert.That(liienCode.VerifyValues(2,20,0.6f));
+            Assert.That(pixelCode.VerifyValues(1,5,1));
+            pixelCode.Upgrade();
+            Assert.That(pixelCode.VerifyValues(1,10,0.8f));
+            pixelCode.Upgrade();
+            Assert.That(pixelCode.VerifyValues(1,20,0.6f));
+            pixelCode.Upgrade();
+            Assert.That(pixelCode.VerifyValues(2,20,0.6f));
         } 
         GameManager.Instance.isInBuildPhase = false;
         for (int i = 0; i<5; i++){
@@ -84,9 +86,9 @@ public class TowersTesting
         }
         request = Addressables.LoadAsset<GameObject>("Assets/Prefab/Ennemies/Ennemy3.prefab");
         yield return request;
-        GameObject ennemy1 = GameObject.Instantiate(request.Result,liien.transform.position+new Vector3(1,0,0),Quaternion.identity);
-        GameObject ennemy2 = GameObject.Instantiate(request.Result,liien.transform.position+new Vector3(1,0,0),Quaternion.identity);
-        GameObject ennemy3 = GameObject.Instantiate(request.Result,liien.transform.position+new Vector3(1,0,0),Quaternion.identity);
+        GameObject ennemy1 = GameObject.Instantiate(request.Result,pxl.transform.position+new Vector3(1,0,0),Quaternion.identity);
+        GameObject ennemy2 = GameObject.Instantiate(request.Result,pxl.transform.position+new Vector3(1,0,0),Quaternion.identity);
+        GameObject ennemy3 = GameObject.Instantiate(request.Result,pxl.transform.position+new Vector3(1,0,0),Quaternion.identity);
         yield return new WaitForSeconds(1f);
         Assert.That(GameManager.Instance.aliveEnnemies <= -3);
     }

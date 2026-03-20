@@ -42,6 +42,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e6011c2955ee6104a9eae46b849e04a3
+    m_Address: Assets/Prefab/Turrets/PXL.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e8d238cf06d52aa4ea22440a7ef5d867
     m_Address: Assets/Prefab/Ennemies/EnnemyGraouGraou.prefab
     m_ReadOnly: 0

@@ -54,7 +54,8 @@ public class LeBarC : TurretBaseScript
         canBoost = true;
     }
 
-    public override void Upgrade(){
+    public override bool Upgrade(){
+        if (!base.Upgrade()) return false;
         if(level == 2){
             damage += 1;
             attackSpeed -= 0.5f;
@@ -63,5 +64,6 @@ public class LeBarC : TurretBaseScript
             if(level == 3) canKilometre = true;
             damage += 2;
         } 
+        return true;
     }
 }
