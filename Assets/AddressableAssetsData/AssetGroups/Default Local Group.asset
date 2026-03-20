@@ -17,13 +17,33 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 8264f39e50c8f8a4b8dc417f6e6c2f2b
   m_SerializeEntries:
+  - m_GUID: 0e72b4d4d0fb5cd4a91e2bf62da9724c
+    m_Address: Assets/Prefab/Ennemies/Ennemy3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4cfa32fbdf2aecd4cb9d0ebe2549f9f6
+    m_Address: Assets/Prefab/Ennemies/Ennemy2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4ea6acaf547cb4646a92e77b65fdc853
     m_Address: Assets/Prefab/GameManager.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7090018c1576c1549a00847c50720d1a
+    m_Address: Assets/Prefab/Ennemies/Boss.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 97c2098d0d467d54ea6dda8bb1fb0730
     m_Address: Assets/Prefab/Turrets/Liien.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e8d238cf06d52aa4ea22440a7ef5d867
+    m_Address: Assets/Prefab/Ennemies/EnnemyGraouGraou.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

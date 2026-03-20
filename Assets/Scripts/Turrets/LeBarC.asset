@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cc4f3e5905aef341a8f4091405d94b1, type: 3}
   m_Name: LeBarC
   m_EditorClassIdentifier: 
-  range: 1
+  range: 5
   damage: 2
   attackSpeed: 1
   Cost: 100
