@@ -52,17 +52,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ennemy2
       objectReference: {fileID: 0}
+    - target: {fileID: 3492011798459436316, guid: e8d238cf06d52aa4ea22440a7ef5d867, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3492011798459436316, guid: e8d238cf06d52aa4ea22440a7ef5d867, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3492011798459436316, guid: e8d238cf06d52aa4ea22440a7ef5d867, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6997257329676037221, guid: e8d238cf06d52aa4ea22440a7ef5d867, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a94ea5105e0a20748a60784c75ae9d8f, type: 2}
+    - target: {fileID: 7370398289048431482, guid: e8d238cf06d52aa4ea22440a7ef5d867, type: 3}
+      propertyPath: m_Height
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370398289048431482, guid: e8d238cf06d52aa4ea22440a7ef5d867, type: 3}
+      propertyPath: m_Radius
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7370398289048431482, guid: e8d238cf06d52aa4ea22440a7ef5d867, type: 3}
+      propertyPath: m_Center.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7671818028848562324, guid: e8d238cf06d52aa4ea22440a7ef5d867, type: 3}
       propertyPath: hp
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7671818028848562324, guid: e8d238cf06d52aa4ea22440a7ef5d867, type: 3}
       propertyPath: speed
-      value: 5
+      value: 1.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

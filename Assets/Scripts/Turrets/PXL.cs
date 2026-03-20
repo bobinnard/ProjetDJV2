@@ -40,7 +40,8 @@ public class PXL : TurretBaseScript
         ennemyHp.speed = ennemySpeed;
     }
     
-    public override void Upgrade(){
+    public override bool Upgrade(){
+        if (!base.Upgrade()) return false;
         if(level < 3)
         {
             damage *= 2;
@@ -50,5 +51,6 @@ public class PXL : TurretBaseScript
         {
             range *= 2;
         }
+        return true;
     }
 }

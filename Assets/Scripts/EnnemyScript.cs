@@ -7,7 +7,7 @@ public class EnnemyScript : MonoBehaviour
     public Vector3[] path;
     [SerializeField] private CharacterController chara;
     private int currentTarget;
-    private float Error = 0.4f;
+    private float Error = 0.05f;
     public float speed;
     public int score;
     public int reward;
@@ -25,6 +25,7 @@ public class EnnemyScript : MonoBehaviour
     {
         if(Vector3.Distance(path[currentTarget], transform.position) <= Error) 
         {
+            transform.position = path[currentTarget];
             currentTarget++;
         }
         if(currentTarget == path.Length) DealDamage();

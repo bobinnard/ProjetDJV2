@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletScript : MonoBehaviour
@@ -7,15 +5,13 @@ public class BulletScript : MonoBehaviour
     public float speed;
     public int damage;
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        transform.position += transform.forward*speed*Time.deltaTime;
+        transform.position += speed * Time.deltaTime * transform.forward;
     }
 
-    void OnTriggerEnter(Collider other){
-        EnnemyScript ennemy;
-        if(other.TryGetComponent<EnnemyScript>(out ennemy)) ennemy.TakeDamage(damage);
+    private void OnTriggerEnter(Collider other){
+        if(other.TryGetComponent<EnnemyScript>(out var enemy)) enemy.TakeDamage(damage);
         Destroy(gameObject);
     }
 }
