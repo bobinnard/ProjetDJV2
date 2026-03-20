@@ -590,7 +590,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38.15
+  m_fontSize: 38.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1401,10 +1401,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Position (11)
       objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1533,10 +1529,6 @@ PrefabInstance:
     - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
       propertyPath: m_Name
       value: Tower Position (18)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1787,10 +1779,6 @@ PrefabInstance:
     - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
       propertyPath: m_Name
       value: Tower Position (12)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2289,10 +2277,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Position (29)
       objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2492,10 +2476,6 @@ PrefabInstance:
     - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
       propertyPath: m_Name
       value: Tower Position (13)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2745,10 +2725,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Position (26)
       objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2889,7 +2865,6 @@ GameObject:
   - component: {fileID: 546731858}
   - component: {fileID: 546731857}
   - component: {fileID: 546731856}
-  - component: {fileID: 546731855}
   m_Layer: 0
   m_Name: Quad (4)
   m_TagString: Untagged
@@ -2897,28 +2872,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &546731855
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 546731854}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &546731856
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3336,10 +3289,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Position (24)
       objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3458,10 +3407,6 @@ PrefabInstance:
     - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
       propertyPath: m_Name
       value: Tower Position (19)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4146,10 +4091,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Position (28)
       objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4407,10 +4348,6 @@ PrefabInstance:
     - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
       propertyPath: m_Name
       value: Tower Position (20)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4775,7 +4712,6 @@ GameObject:
   - component: {fileID: 931871769}
   - component: {fileID: 931871768}
   - component: {fileID: 931871767}
-  - component: {fileID: 931871766}
   m_Layer: 0
   m_Name: Quad (2)
   m_TagString: Untagged
@@ -4783,28 +4719,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &931871766
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 931871765}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &931871767
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5490,10 +5404,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Position (14)
       objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5966,10 +5876,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Position (10)
       objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6088,10 +5994,6 @@ PrefabInstance:
     - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
       propertyPath: m_Name
       value: Tower Position (23)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6485,7 +6387,6 @@ GameObject:
   - component: {fileID: 1200666582}
   - component: {fileID: 1200666581}
   - component: {fileID: 1200666580}
-  - component: {fileID: 1200666579}
   m_Layer: 0
   m_Name: Quad (3)
   m_TagString: Untagged
@@ -6493,28 +6394,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1200666579
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200666578}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1200666580
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6870,10 +6749,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Position (25)
       objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6987,10 +6862,6 @@ PrefabInstance:
     - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
       propertyPath: m_Name
       value: Tower Position (15)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7496,7 +7367,6 @@ GameObject:
   - component: {fileID: 1309439506}
   - component: {fileID: 1309439505}
   - component: {fileID: 1309439504}
-  - component: {fileID: 1309439503}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -7504,28 +7374,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1309439503
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1309439502}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1309439504
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7642,10 +7490,6 @@ PrefabInstance:
     - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
       propertyPath: m_Name
       value: Tower Position (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8383,7 +8227,7 @@ Camera:
   far clip plane: 150
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8408,7 +8252,7 @@ Transform:
   m_GameObject: {fileID: 1555113743}
   serializedVersion: 2
   m_LocalRotation: {x: 0.3536045, y: 0.35325542, z: -0.14632317, w: 0.8536768}
-  m_LocalPosition: {x: 4.5, y: 0, z: 4.5}
+  m_LocalPosition: {x: 0, y: 6.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8430,7 +8274,6 @@ GameObject:
   - component: {fileID: 1563645669}
   - component: {fileID: 1563645668}
   - component: {fileID: 1563645667}
-  - component: {fileID: 1563645666}
   m_Layer: 0
   m_Name: Quad (1)
   m_TagString: Untagged
@@ -8438,28 +8281,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1563645666
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1563645665}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1563645667
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8803,10 +8624,6 @@ PrefabInstance:
     - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
       propertyPath: m_Name
       value: Tower Position (30)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9877,10 +9694,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Position (17)
       objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10238,10 +10051,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Position (31)
       objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10299,10 +10108,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Position (27)
       objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10333,7 +10138,7 @@ Transform:
   m_GameObject: {fileID: 1937985298}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.099, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10727,10 +10532,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Position (16)
       objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11039,10 +10840,6 @@ PrefabInstance:
     - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
       propertyPath: m_Name
       value: Tower Position (21)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11353,10 +11150,6 @@ PrefabInstance:
     - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
       propertyPath: m_Name
       value: Tower Position (22)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5330193339727995658, guid: 0b5fb61e08788954b8e82ba4393618a4, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
