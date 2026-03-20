@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4293311439861220768}
   - component: {fileID: 8039093281948967620}
   - component: {fileID: -4626833729897634639}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PXL
   m_TagString: Untagged
   m_Icon: {fileID: 0}

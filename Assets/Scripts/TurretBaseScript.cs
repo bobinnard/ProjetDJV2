@@ -27,4 +27,25 @@ public class TurretBaseScript : MonoBehaviour
         Cost = info.Cost;
         UpgradeCost = info.UpgradeCost;
     }
+
+    public void setStats(string stat, float set)
+    {
+        if(stat == "attackSpeed") attackSpeed = set;
+        if(stat == "damage") damage = (int)set;
+        if(stat == "range") range = (int)set;
+    }
+
+    float getStats(string stat)
+    {
+        if(stat == "attackSpeed") return attackSpeed;
+        if(stat == "damage") return damage;
+        if(stat == "range") return range;
+    }
+
+    //--------------------------Testing functions---------------------------
+
+    public bool VerifyValues(int r, int d, float aspeed)
+    {
+        return(r == range && d == damage && aspeed == attackSpeed);
+    }
 }

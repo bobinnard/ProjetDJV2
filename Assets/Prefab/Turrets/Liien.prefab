@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3582560863732518977}
   - component: {fileID: 3924987354455375944}
   - component: {fileID: 240055171004511302}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Liien
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,4 +119,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info: {fileID: 11400000, guid: a1bfbbfcaf6436f42a5de54ec4be1e02, type: 2}
-  bullet: {fileID: 0}

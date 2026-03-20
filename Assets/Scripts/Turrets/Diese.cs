@@ -7,7 +7,7 @@ public class Diese : TurretBaseScript
     private bool isOnCooldown = false;
 
     private float offersCooldown = 5;
-    private bool canOffer = true;
+    private bool canOffer = false;
     [SerializeField] private GameObject offerIcon;
 
     // Update is called once per frame
@@ -44,6 +44,10 @@ public class Diese : TurretBaseScript
             damage += 15;
             attackSpeed -= 1f;
         }
-        else damage += 100;
+        else
+        {
+            damage += 100;
+            canOffer = true;
+        } 
     }
 }
