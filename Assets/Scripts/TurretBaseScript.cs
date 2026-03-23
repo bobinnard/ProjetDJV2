@@ -39,38 +39,39 @@ public class TurretBaseScript : MonoBehaviour
     }
 
     // purely visual effect, entirely hard coded
-    IEnumerator AnimateAttack(Transform target)
+    protected IEnumerator AnimateAttack(Transform target)
     {
         var pos = transform.position + new Vector3(0.5f, Mathf.Max(level, 2) * 0.3f + 0.5f, 0.5f);
         var bullet = Instantiate(bulletMesh, pos, Quaternion.identity);
         bullet.SetActive(true);
         bullet.transform.localScale = Vector3.zero;
-        float time = 0;
         // appear
-        while (time < 0.25f)
+        float time = 0;
+        while (time < attackSpeed/4)
         {   
-            bullet.transform.localScale = time * 4 * Vector3.one;
+            bullet.transform.localScale = time * 4/attackSpeed * bulletMesh.transform.localScale;
             time += Time.deltaTime;
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
-        time = 0;
         // turn faster and faster
-        while (time < 0.25f)
-        {
-            bullet.transform.rotation = Quaternion.AngleAxis(Mathf.Exp(time * 4) - 1, Vector3.up);
-            time += Time.deltaTime;
-            yield return new WaitForEndOfFrame();
-        }
         time = 0;
+        while (time < attackSpeed/4)
+        {
+            bullet.transform.rotation = Quaternion.AngleAxis(Mathf.Exp(time * 4/attackSpeed) - 1, Vector3.up);
+            time += Time.deltaTime;
+            yield return null;
+        }
         // attack
+        time = 0;
         var direction = target.position - bullet.transform.position;
-        while (time < 0.5f)
+        while (time < attackSpeed/2)
         {
             bullet.transform.rotation = Quaternion.AngleAxis(time*100, Vector3.up);
-            bullet.transform.position = pos + direction * time * 2;
+            bullet.transform.position = pos + direction * time * 2/attackSpeed;
             time += Time.deltaTime;
-            yield return new WaitForEndOfFrame();
+            yield return null;
         }
+        Destroy(bullet);
     }
 
     public void setStats(string stat, float set)

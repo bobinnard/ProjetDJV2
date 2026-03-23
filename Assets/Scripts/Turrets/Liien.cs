@@ -22,10 +22,10 @@ public class Liien : TurretBaseScript
                 minI = i;
             }
         }
-        transform.LookAt(nearEnemies[minI].gameObject.transform.position);
+        StartCoroutine(AnimateAttack(nearEnemies[minI].gameObject.transform));
+        yield return new WaitForSeconds(attackSpeed);
         if(nearEnemies[minI].gameObject.TryGetComponent<EnnemyScript>(out var enemyHp)) enemyHp.TakeDamage(damage);
         if (level == 3) MultiHit(nearEnemies[minI]);
-        yield return new WaitForSeconds(attackSpeed);
         _canAttack = true;
     }
 
