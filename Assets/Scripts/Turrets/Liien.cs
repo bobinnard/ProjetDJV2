@@ -24,7 +24,6 @@ public class Liien : TurretBaseScript
         }
         StartCoroutine(AnimateAttack(nearEnemies[minI].gameObject.transform));
         yield return new WaitForSeconds(attackSpeed);
-        if(nearEnemies[minI].gameObject.TryGetComponent<EnnemyScript>(out var enemyHp)) enemyHp.TakeDamage(damage);
         if (level == 3) MultiHit(nearEnemies[minI]);
         _canAttack = true;
     }

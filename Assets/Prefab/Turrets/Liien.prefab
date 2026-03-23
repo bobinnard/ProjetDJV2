@@ -132,6 +132,7 @@ MonoBehaviour:
   info: {fileID: 11400000, guid: a1bfbbfcaf6436f42a5de54ec4be1e02, type: 2}
   mesh: {fileID: 193787013599565629}
   bulletMesh: {fileID: 1716611717052566096}
+  statsMenu: {fileID: 0}
 --- !u!1001 &4078247241521173673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -146,7 +147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9000335075653328169, guid: df1eb92eaacd96145adc2301019a3142, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.178
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9000335075653328169, guid: df1eb92eaacd96145adc2301019a3142, type: 3}
       propertyPath: m_LocalPosition.y
@@ -154,7 +155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9000335075653328169, guid: df1eb92eaacd96145adc2301019a3142, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.142
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9000335075653328169, guid: df1eb92eaacd96145adc2301019a3142, type: 3}
       propertyPath: m_LocalRotation.w

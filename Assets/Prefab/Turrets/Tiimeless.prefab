@@ -47,6 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info: {fileID: 11400000, guid: 750f0546b32319140838a87157faaa51, type: 2}
   mesh: {fileID: 8608256799428606729}
+  bulletMesh: {fileID: 0}
+  statsMenu: {fileID: 0}
 --- !u!1001 &5439322391916194108
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57,7 +59,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2529013193384023347, guid: ee1e3a8a4fa3c6a4c8b825a1546a39d7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.098
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2529013193384023347, guid: ee1e3a8a4fa3c6a4c8b825a1546a39d7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -65,7 +67,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2529013193384023347, guid: ee1e3a8a4fa3c6a4c8b825a1546a39d7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.093
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2529013193384023347, guid: ee1e3a8a4fa3c6a4c8b825a1546a39d7, type: 3}
       propertyPath: m_LocalRotation.w

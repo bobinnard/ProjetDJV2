@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class TurretBaseScript : MonoBehaviour
     [SerializeField] public TurretInfo info;
     [SerializeField] private GameObject mesh;
     [SerializeField] private GameObject bulletMesh;
+    [SerializeField] private GameObject statsMenu;
     protected float range;
     protected int damage;
     protected float attackSpeed;
@@ -41,7 +43,7 @@ public class TurretBaseScript : MonoBehaviour
     // purely visual effect, entirely hard coded
     protected IEnumerator AnimateAttack(Transform target)
     {
-        var pos = transform.position + new Vector3(0.5f, Mathf.Max(level, 2) * 0.3f + 0.5f, 0.5f);
+        var pos = transform.position + new Vector3(0, Mathf.Max(level, 2) * 0.25f + 0.5f,0);
         var bullet = Instantiate(bulletMesh, pos, Quaternion.identity);
         bullet.SetActive(true);
         bullet.transform.localScale = Vector3.zero;
@@ -53,25 +55,19 @@ public class TurretBaseScript : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
-        // turn faster and faster
+        yield return new WaitForSeconds(attackSpeed/4);
+        // attack
         time = 0;
         while (time < attackSpeed/4)
         {
-            bullet.transform.rotation = Quaternion.AngleAxis(Mathf.Exp(time * 4/attackSpeed) - 1, Vector3.up);
-            time += Time.deltaTime;
-            yield return null;
-        }
-        // attack
-        time = 0;
-        var direction = target.position - bullet.transform.position;
-        while (time < attackSpeed/2)
-        {
+            var direction = target.position - pos;
             bullet.transform.rotation = Quaternion.AngleAxis(time*100, Vector3.up);
-            bullet.transform.position = pos + direction * time * 2/attackSpeed;
+            bullet.transform.position = pos + time * 4/attackSpeed * direction;
             time += Time.deltaTime;
             yield return null;
         }
         Destroy(bullet);
+        if(target.gameObject.TryGetComponent<EnnemyScript>(out var enemyHp)) enemyHp.TakeDamage(damage);
     }
 
     public void setStats(string stat, float set)
@@ -88,7 +84,17 @@ public class TurretBaseScript : MonoBehaviour
         if(stat == "range") return range;
         else return -1;
     }
-
+/*
+    private void OnMouseEnter()
+    {
+        statsMenu.SetActive(true);
+    }
+    
+    private void OnMouseExit()
+    {
+        statsMenu.SetActive(false);
+    }
+*/
     //--------------------------Testing functions---------------------------
 
     public bool VerifyValues(int r, int d, float aspeed)

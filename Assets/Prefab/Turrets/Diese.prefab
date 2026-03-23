@@ -172,6 +172,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info: {fileID: 11400000, guid: 30d96bea1a9ced94c95996c9f1cfbae3, type: 2}
   mesh: {fileID: 8396539171358784478}
+  bulletMesh: {fileID: 0}
+  statsMenu: {fileID: 0}
   offerIcon: {fileID: 3055447173695138930}
 --- !u!1001 &556879700389144
 PrefabInstance:
@@ -187,7 +189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8528331925934324870, guid: 19085ffa451a99a42badefe125a971d7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.18400016
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8528331925934324870, guid: 19085ffa451a99a42badefe125a971d7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -195,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8528331925934324870, guid: 19085ffa451a99a42badefe125a971d7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.15900001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8528331925934324870, guid: 19085ffa451a99a42badefe125a971d7, type: 3}
       propertyPath: m_LocalRotation.w
