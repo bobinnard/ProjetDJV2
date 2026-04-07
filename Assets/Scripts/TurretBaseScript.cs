@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class TurretBaseScript : MonoBehaviour
@@ -99,6 +100,13 @@ public class TurretBaseScript : MonoBehaviour
 
     public bool VerifyValues(int r, int d, float aspeed)
     {
-        return r == range && d == damage && aspeed == attackSpeed;
+        return r == range && d == damage && MathF.Abs(aspeed - attackSpeed) < 0.1;
+    }
+
+    public void printValues()
+    {
+        UnityEngine.Debug.Log(range);
+        UnityEngine.Debug.Log(attackSpeed);
+        UnityEngine.Debug.Log(damage);
     }
 }

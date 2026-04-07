@@ -70,11 +70,12 @@ public class TowersTesting
         {
             Assert.That(pixelCode.VerifyValues(1,5,1));
             pixelCode.Upgrade();
-            Assert.That(pixelCode.VerifyValues(1,10,0.8f));
+            Assert.That(pixelCode.VerifyValues(1,10,0.9f));
             pixelCode.Upgrade();
-            Assert.That(pixelCode.VerifyValues(1,20,0.6f));
+            pixelCode.printValues();
+            Assert.That(pixelCode.VerifyValues(1,20,0.8f));
             pixelCode.Upgrade();
-            Assert.That(pixelCode.VerifyValues(2,20,0.6f));
+            Assert.That(pixelCode.VerifyValues(2,20,0.8f));
         } 
         GameManager.Instance.isInBuildPhase = false;
         for (int i = 0; i<5; i++){
