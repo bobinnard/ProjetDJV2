@@ -57,6 +57,7 @@ public class TowerPosition : MonoBehaviour
                     transform)
                 .GetComponent<TurretBaseScript>();
         _tower.gameObject.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void DestroyTower()

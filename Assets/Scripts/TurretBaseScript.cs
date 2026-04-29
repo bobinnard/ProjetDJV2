@@ -49,7 +49,7 @@ public class TurretBaseScript : MonoBehaviour
         bullet.transform.localScale = Vector3.zero;
         // appear
         float time = 0;
-        while (time < attackSpeed/4)
+        while (target && time < attackSpeed/4)
         {   
             bullet.transform.localScale = time * 4/attackSpeed * bulletMesh.transform.localScale;
             time += Time.deltaTime;
@@ -58,16 +58,17 @@ public class TurretBaseScript : MonoBehaviour
         yield return new WaitForSeconds(attackSpeed/4);
         // attack
         time = 0;
-        while (time < attackSpeed/4)
+        var direction = Vector3.zero;
+        while (target && time < attackSpeed/4)
         {
-            var direction = target.position - pos;
+            direction = target.position - pos;
             bullet.transform.rotation = Quaternion.AngleAxis(time*100, Vector3.up);
             bullet.transform.position = pos + time * 4/attackSpeed * direction;
             time += Time.deltaTime;
             yield return null;
         }
         Destroy(bullet);
-        if(target.gameObject.TryGetComponent<EnnemyScript>(out var enemyHp)) enemyHp.TakeDamage(damage);
+        if(target && target.gameObject.TryGetComponent<EnnemyScript>(out var enemyHp)) enemyHp.TakeDamage(damage);
     }
 
     public void setStats(string stat, float set)
