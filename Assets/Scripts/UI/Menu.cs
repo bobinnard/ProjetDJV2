@@ -1,29 +1,39 @@
+using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class Menu : MonoBehaviour
 {
     [SerializeField] GameObject optionsMenu;
     [SerializeField] GameObject mainMenu;
-    
+    [SerializeField] GameObject pauseMenu;
+
     private bool _isPaused;
 
     private void Start()
     {
         optionsMenu.SetActive(false);
+        if (pauseMenu) pauseMenu.SetActive(false);
     }
-    
-    IEnumerator RestartLevel()
+
+    private void Update()
     {
-        yield return new WaitForSecondsRealtime(.5f);
-        SceneManager.LoadScene("Scenes/Paquito");
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (optionsMenu.activeSelf)
+            {
+                ToggleOptionsMenu();
+                return;
+            }
+
+            if (pauseMenu) TogglePause();
+        }
     }
 
     public void StartGame() {
-        Time.timeScale=1;
         SceneManager.LoadScene("Scenes/Paquito");
-        StartCoroutine(RestartLevel());
     }
 
     public void QuitGame(){
@@ -31,22 +41,21 @@ public class Menu : MonoBehaviour
     }
 
     public void BackToMainMenu(){
+        Time.timeScale = 1;
         SceneManager.LoadScene("Scenes/MainMenu");
     }
 
-    public void PauseGame(){
-        Time.timeScale=0; 
-        _isPaused=true;
-    }
-
-    public void ResumeGame(){
-        Time.timeScale=1;
-        _isPaused=false;
+    public void TogglePause(){
+        Time.timeScale = (Time.timeScale - 1) * (Time.timeScale - 1); 
+        _isPaused = !_isPaused;
+        pauseMenu.SetActive(_isPaused);
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void ToggleOptionsMenu()
     {
         optionsMenu.SetActive(!optionsMenu.activeSelf);
         mainMenu.SetActive(!mainMenu.activeSelf);
+        EventSystem.current.SetSelectedGameObject(null);
     }
 }
