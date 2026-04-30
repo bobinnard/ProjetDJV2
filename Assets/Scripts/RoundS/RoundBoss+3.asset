@@ -10,22 +10,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b72627f2bfd1caa47a4a5c6256950424, type: 3}
-  m_Name: Round3
+  m_Name: RoundBoss+3
   m_EditorClassIdentifier: 
-  nbEnnemy: 6
+  nbEnnemy: 12
   ennemieTypes:
-  - {fileID: 3266672300219935966, guid: e8d238cf06d52aa4ea22440a7ef5d867, type: 3}
-  - {fileID: 3687721048858713928, guid: 4cfa32fbdf2aecd4cb9d0ebe2549f9f6, type: 3}
+  - {fileID: 7457414501987981677, guid: 0e72b4d4d0fb5cd4a91e2bf62da9724c, type: 3}
+  - {fileID: 1057844785840860816, guid: 7090018c1576c1549a00847c50720d1a, type: 3}
   ennemyCooldown:
   - 1
-  - 0.2
   - 1
-  - 0.2
+  - 0
+  - 0.5
+  - 0
+  - 0.5
+  - 0
+  - 0.5
+  - 0
+  - 0.5
+  - 0
+  - 0.5
+  - 0
+  - 0.5
+  - 0
+  - 0.5
+  - 0
+  - 0.5
+  - 0
+  - 0.5
+  - 0
   - 1
   - 1
   - 0
-  - 0.2
-  - 0
-  - 0.2
-  - 0
-  - 0.2

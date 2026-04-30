@@ -82,11 +82,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7671818028848562324, guid: e8d238cf06d52aa4ea22440a7ef5d867, type: 3}
       propertyPath: hp
-      value: 10
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7671818028848562324, guid: e8d238cf06d52aa4ea22440a7ef5d867, type: 3}
+      propertyPath: score
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7671818028848562324, guid: e8d238cf06d52aa4ea22440a7ef5d867, type: 3}
       propertyPath: speed
       value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7671818028848562324, guid: e8d238cf06d52aa4ea22440a7ef5d867, type: 3}
+      propertyPath: reward
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
