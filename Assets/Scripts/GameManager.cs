@@ -60,14 +60,13 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        money = 0;
+        money = 30;
         score = 0;
         multiplier = 1;
         roundNumber = 0;
         GoToBuildPhase();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(aliveEnnemies <= 0 && roundNumber < rounds.Length && canLaunch && !isInBuildPhase) GoToBuildPhase();

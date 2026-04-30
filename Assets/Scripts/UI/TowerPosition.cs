@@ -9,13 +9,13 @@ public class TowerPosition : MonoBehaviour
     // Main button that indicates the tower position
     [SerializeField] private Button button;
     
-    // whether a tower is built here 
+    // whether a tower is built here
     private bool _isOccupied;
     // the tower that is built
     private TurretBaseScript _tower;
     // whether the main button is selected, used to ask confirmation on tower placement
     private bool _isSelected;
-    // placement whose upgrade/delete UI is shown, used to make sure only one UI is shown at once.
+    // placement whose upgrade/delete UI is shown, used to make sure only one UI is shown at once
     private static TowerPosition _selectedButton;
 
     private void Update()
@@ -57,6 +57,13 @@ public class TowerPosition : MonoBehaviour
                     transform)
                 .GetComponent<TurretBaseScript>();
         _tower.gameObject.SetActive(true);
+        GameManager.Instance.money -= _tower.Cost;
+        if (GameManager.Instance.money < 0)
+        {
+            GameManager.Instance.money += _tower.Cost;
+            DestroyTower();
+            towerMenu.SetActive(false);
+        }
         EventSystem.current.SetSelectedGameObject(null);
     }
 

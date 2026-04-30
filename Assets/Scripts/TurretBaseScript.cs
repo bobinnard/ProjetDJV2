@@ -13,7 +13,7 @@ public class TurretBaseScript : MonoBehaviour
     protected float range;
     protected int damage;
     protected float attackSpeed;
-    protected int Cost;
+    public int Cost;
     protected int level = 0;
     private int[] _upgradeCost;
 

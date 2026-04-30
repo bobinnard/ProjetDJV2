@@ -6,8 +6,9 @@ public class EnnemyScript : MonoBehaviour
 {
     public Vector3[] path;
     [SerializeField] private CharacterController chara;
+    [SerializeField] private AudioClip hurtSound;
     private int currentTarget;
-    private float Error = 0.3f;
+    private float Error = 0.1f;
     public float speed;
     public int score;
     public int reward;
@@ -20,7 +21,6 @@ public class EnnemyScript : MonoBehaviour
         currentTarget = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(Vector3.Distance(path[currentTarget], transform.position) <= Error) 
@@ -39,6 +39,7 @@ public class EnnemyScript : MonoBehaviour
     public void TakeDamage(int damage){
         hp -= damage;
         if(hp <= 0 && !isDead) Die();
+        SoundManager.Instance.PlaySound(hurtSound);
     }
 
     private void DealDamage(){

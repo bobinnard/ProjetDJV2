@@ -78,6 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   path: []
   chara: {fileID: 7370398289048431482}
+  hurtSound: {fileID: 8300000, guid: 0b654430ea27d0c4594c01cf7a2b6ea8, type: 3}
   speed: 2.5
   score: 1
   reward: 1
