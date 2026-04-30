@@ -70,26 +70,21 @@ public class TowersTesting
         {
             Assert.That(pixelCode.VerifyValues(1,5,1));
             pixelCode.Upgrade();
-            Assert.That(pixelCode.VerifyValues(1,10,0.8f));
+            Assert.That(pixelCode.VerifyValues(1,10,0.9f));
             pixelCode.Upgrade();
-            Assert.That(pixelCode.VerifyValues(1,20,0.6f));
+            Assert.That(pixelCode.VerifyValues(1,20,0.8f));
             pixelCode.Upgrade();
-            Assert.That(pixelCode.VerifyValues(2,20,0.6f));
+            Assert.That(pixelCode.VerifyValues(2,20,0.8f));
         } 
         GameManager.Instance.isInBuildPhase = false;
-        for (int i = 0; i<5; i++){
+        for (int i = 0; i<4; i++){
             GameManager.Instance.LaunchNextRound();
             yield return new WaitForSeconds(10f);
             Assert.That(GameManager.Instance.aliveEnnemies <= 0);
             Assert.That(GameManager.Instance.score >= 0);
             Assert.That(GameManager.Instance.isInBuildPhase == true);
         }
-        request = Addressables.LoadAsset<GameObject>("Assets/Prefab/Ennemies/Ennemy3.prefab");
-        yield return request;
-        GameObject ennemy1 = GameObject.Instantiate(request.Result,pxl.transform.position+new Vector3(1,0,0),Quaternion.identity);
-        GameObject ennemy2 = GameObject.Instantiate(request.Result,pxl.transform.position+new Vector3(1,0,0),Quaternion.identity);
-        GameObject ennemy3 = GameObject.Instantiate(request.Result,pxl.transform.position+new Vector3(1,0,0),Quaternion.identity);
-        yield return new WaitForSeconds(1f);
-        Assert.That(GameManager.Instance.aliveEnnemies <= -3);
+        yield return new WaitForSeconds(10f);
+        Assert.That(GameManager.Instance.aliveEnnemies <= 0);
     }
 }

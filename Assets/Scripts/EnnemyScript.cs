@@ -7,7 +7,7 @@ public class EnnemyScript : MonoBehaviour
     public Vector3[] path;
     [SerializeField] private CharacterController chara;
     private int currentTarget;
-    private float Error = 0.05f;
+    private float Error = 0.3f;
     public float speed;
     public int score;
     public int reward;

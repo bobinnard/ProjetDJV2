@@ -57,7 +57,7 @@ MonoBehaviour:
   path:
   - {x: 10, y: 0, z: 0}
   - {x: 10, y: 0, z: 5}
-  EndingPoint: {x: 0, y: 0, z: 0}
+  EndingPoint: {x: 10, y: 0, z: 5}
   scoreText: {fileID: 6215469031867212044, guid: 09a8ab5273474fd42ad193159a364d21, type: 3}
   isInBuildPhase: 1
   isSlown: 0
